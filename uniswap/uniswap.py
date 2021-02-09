@@ -118,7 +118,7 @@ def _validate_address(a: AddressLike) -> None:
     assert _addr_to_str(a)
 
 
-_netid_to_name = {1: "mainnet", 4: "rinkeby"}
+_netid_to_name = {1: "mainnet", 4: "rinkeby", 122: "fuse"}
 
 
 class Uniswap:
@@ -185,13 +185,13 @@ class Uniswap:
             # For v2 the address is the same on mainnet, Ropsten, Rinkeby, Görli, and Kovan
             # https://uniswap.org/docs/v2/smart-contracts/factory
             factory_contract_address_v2 = _str_to_addr(
-                "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f"
+                "0x1d1f1A7280D67246665Bb196F38553b469294f3a"
             )
             self.factory_contract = self._load_contract(
                 abi_name="uniswap-v2/factory", address=factory_contract_address_v2,
             )
             self.router_address: AddressLike = _str_to_addr(
-                "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"
+                "0xFB76e9E7d88E308aB530330eD90e84a952570319"
             )
             """Documented here: https://uniswap.org/docs/v2/smart-contracts/router02/"""
             self.router = self._load_contract(
